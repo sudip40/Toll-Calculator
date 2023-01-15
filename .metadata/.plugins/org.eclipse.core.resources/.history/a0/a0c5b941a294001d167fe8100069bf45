@@ -1,0 +1,48 @@
+
+public class VehicleDetails {
+	private String vehicleNo;
+	private boolean fastTag;
+	private int fastTagBalance;
+	private String vehicleType;
+
+	public String getVehicleNo() {
+		return vehicleNo;
+	}
+
+	public void setVehicleNo(String vehicleNo) {
+		this.vehicleNo = vehicleNo;
+	}
+
+	public boolean isFastTag() {
+		return fastTag;
+	}
+
+	public void setFastTag(boolean fastTag) {
+		this.fastTag = fastTag;
+	}
+
+	public int getFastTagBalance() {
+		return fastTagBalance;
+	}
+
+	public void setFastTagBalance(int fastTagBalance) {
+		this.fastTagBalance = fastTagBalance;
+	}
+
+	public String getVehicleType() {
+		return vehicleType;
+	}
+
+	public void setVehicleType(String vehicleType) {
+		this.vehicleType = vehicleType;
+	}
+
+	public VehicleDetails(String vehicleNo, boolean fastTag, int fastTagBalance, String vehicleType) {
+		super();
+		this.vehicleNo = vehicleNo;
+		this.fastTag = fastTag;
+		this.fastTagBalance = fastTagBalance;
+		this.vehicleType = vehicleType;
+	}
+
+}

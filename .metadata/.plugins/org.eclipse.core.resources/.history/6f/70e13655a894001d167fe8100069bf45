@@ -1,0 +1,42 @@
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Geektrust {
+	public static void main(String[] args) {
+		try {
+			List<VehicleDetails> vehicleDetails = new ArrayList<>();
+
+			FileInputStream fis = new FileInputStream("sample_input/input1.txt");
+			Scanner sc = new Scanner(fis);
+			while (sc.hasNextLine()) {
+				String inputCommand = sc.nextLine();
+//				System.out.println(inputCommand);
+				String output = "";
+//				System.out.println(output);
+				if (inputCommand.equals("PRINT_COLLECTION")) {
+
+				} else {
+					String[] str = inputCommand.split(" ");
+					if (str[0].equals("FASTAG")) {
+						vehicleDetails.add(new VehicleDetails(str[1], true, Integer.parseInt(str[2])));
+					}
+
+					else if (str[0].equals("COLLECT_TOLL")) {
+						for (VehicleDetails v : vehicleDetails) {
+							if (v.getVehicleNo().equals(str[2])) {
+								v.chargeToll();
+							}
+						}
+					}
+				}
+			}
+
+			sc.close();
+		} catch (IOException e) {
+
+		}
+	}
+}
